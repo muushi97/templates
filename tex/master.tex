@@ -1,0 +1,57 @@
+\documentclass[uplatex, 11pt, a4j, dvipdfmx]{jsarticle}
+
+%------------------------------------------------------------------------
+% プリアンブル読み込み
+%------------------------------------------------------------------------
+\input{./preembles/all.tex}
+%------------------------------------------------------------------------
+% ちょっとした設定等
+%------------------------------------------------------------------------
+%\setlength{\columnsep}{3zw}
+%\setcounter{tocdepth}{3}                       % 目次を \subsection まで表示
+
+
+%------------------------------------------------------------------------
+% ちーとしーと
+%------------------------------------------------------------------------
+% \section{...}, \subsection{...}, \subsubsection{...}
+
+% \eqref{...} : 数式参照
+% \begin{equation}
+%     ... \label{eq:...}
+% \end{equation}
+
+% \begin{equation}
+%     \begin{aligned}
+%         ... & ... \\
+%         ... & ...
+%     \end{aligned} \label{eq:...}
+% \end{equation}
+
+% \begin{equation}
+%     \left\{ \begin{aligned}
+%         ... & ... \\
+%         ... & ...
+%     \end{aligned} \right. \label{eq:...}
+% \end{equation}
+
+% \qquad, \quad : 空白
+
+% \hypertarget{name}{text}
+% \hyperlink{name}{text}
+
+
+% -----------------------------------------------------------------------
+% 本文
+% -----------------------------------------------------------------------
+\begin{document}
+\begin{equation}
+\label{eq:test}
+y = x^2
+\end{equation}
+\newpage
+式\eqref{eq:test}
+
+
+\end{document}
+
