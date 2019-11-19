@@ -291,6 +291,17 @@ INPUT /usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmtt8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmtt8.tfm
+INPUT images/hoge.png
+INPUT extractbb -B cropbox -O images/hoge.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/japanese-otf-uptex/upnmlminr-v.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/japanese-otf-uptex/upnmlminr-h.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/japanese-otf-uptex/upnmlgothr-v.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/japanese-otf-uptex/upnmlgothr-h.tfm
+INPUT /usr/share/texmf-dist/tex/latex/tex-gyre/t1qhv.fd
+INPUT /usr/share/texmf-dist/tex/latex/tex-gyre/t1qhv.fd
+INPUT /usr/share/texmf-dist/fonts/tfm/public/tex-gyre/ec-qhvr.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/newtx/ntx-Italic-tlf-t1.tfm
 OUTPUT master.dvi
 INPUT master.aux
 INPUT ./master.out

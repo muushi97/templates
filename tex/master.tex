@@ -41,10 +41,32 @@
 % \hyperlink{name}{text}
 
 
+% \myTerm{a}{b}   ->    a(b)
+\newcommand*{\myTerm}[2]{\textsf{#1}{(\emph{#2})}}
+
+% \begin{dfn}\end{dfn}   ->    definition
+\newtheorem{dfn}{定義}
+
+% \begin{thm}\end{thm}   ->    definition
+\newtheorem{thm}{定理}
+
+% \begin{proof}\end{proof}   ->    proof
+
+% 
+\newcommand{\fig}[4]{\begin{figure}[#4]\begin{center}\includegraphics{#1}\caption{#2}\label{fig:#3}\end{center}\end{figure}}
+% 
+\newcommand{\figref}[1]{図\ref{fig:#1}}
+
+
 % -----------------------------------------------------------------------
 % 本文
 % -----------------------------------------------------------------------
 \begin{document}
+\fig{images/hoge.png}{test}{a}{H}
+\begin{dfn}
+  \figref{a}あ
+\end{dfn}
+\myTerm{hoge}{fuga}
 \begin{equation}
 \label{eq:test}
 y = x^2
