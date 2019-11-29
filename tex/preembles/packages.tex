@@ -1,5 +1,5 @@
 %------------------------------------------------------------------------
-% パッケージ読み込み
+% usepackages
 %------------------------------------------------------------------------
 \usepackage{titlesec}                   % セクションとかのサイズ変更
 \usepackage{tabularx}                   % 表
@@ -23,9 +23,11 @@
 \usepackage{mathtools}                  % \mathtoolsset{showonlyrefs=true} で参照した数式のみに数式番号をつける (cleveref) と共存できない
 \mathtoolsset{showonlyrefs=true}
 
-\usepackage{siunitx}                    % SI単位系の出力
+\usepackage[at]{easylist}               % 箇条書きを簡単に書けるように
 
-% ハイパーリンク関連
+\usepackage{siunitx}                    % SI
+
+% hyperlink
 \usepackage[dvipdfmx, bookmarkstype=toc, colorlinks=true, linkcolor=cyan, pdfborder={0 0 0}, bookmarks=true, bookmarksnumbered=true]{hyperref}
 \usepackage{pxjahyper}
 
