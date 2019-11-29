@@ -8,58 +8,59 @@
 #                                                                        #
 # ---------------------------------------------------------------------- #
 
-# コンパイラ
+# compiler
 #CXX        = g++
 CXX        = clang++
-# コンパイラオプション
+# compiler option
 #CXXFLAGS   = -std=c++17 -static -g -O0
 CXXFLAGS   = -std=c++17 -static -g -O3 -mtune=native -march=native
-# インクルードディレクトリ
+# include directory
 INCLUDE    = -I./inc
-# 出力ファイル名
+# output
 TARGETS    = a.out
-# 出力ディレクトリ
+# output directory
 TARGETDIR  = .
-# ソースのルートディレクトリ
+# source directory
 SRCROOT    = ./src
-# オブジェクトファイルのルートディレクトリ
+# object files
 OBJROOT    = ./obj
-# ソースファイルが直下にあるディレクトリたち
+# all directoryes that have some .cpp files
 SRCDIRS    = $(shell find $(SRCROOT) -type d)
-# ソースファイルたち
+# all source files
 SOURCES    = $(foreach dir, $(SRCDIRS), $(wildcard $(dir)/*.cpp))
-# オブジェクトファイルたち
+# all object files
 OBJECTS    = $(subst $(SRCROOT), $(OBJROOT), $(SOURCES:.cpp=.o))
-# オブジェクトファイルが直下にあるディレクトリたち
+# all directoryes that have some object files
 OBJDIRS    = $(subst $(SRCROOT), $(OBJROOT), $(SRCDIRS))
-# 依存関係ファイル
+# all dependent diles
 DEPENDS    = $(OBJECTS:.o=.d)
 
 
-# リンク
+# link
 $(TARGETS): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $(TARGETDIR)/$@ $^
 
-# 依存関係からビルド
+# build from dependency
 -include $(DEPENDS)
 
-# オブジェクトファイルほしい
+# for object files
 $(OBJROOT)/%.o: $(SRCROOT)/%.cpp
 	@if [ ! -e $(dir $@) ]; then mkdir -p $(dir $@); fi
 	$(CXX) $(CXXFLAGS) -MMD -MP $(INCLUDE) -o $@ -c $<
 
-# 篠沢教授に全部
+# rebuild
 all: clean $(TARGETS)
 
-# さよならバイバイ
+# clean build
 clean:
 	- rm $(addsuffix /*.o, $(OBJDIRS))
 	- rm $(addsuffix /*.d, $(OBJDIRS))
 	- rm $(TARGETDIR)/$(TARGETS)
 
+# build and run
 run: $(TARGETS)
 	- ./$(TARGETS)
 
-# こいつらファイルじゃない
+# not files
 .PHONY: all clean
 
