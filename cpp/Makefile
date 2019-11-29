@@ -12,12 +12,12 @@
 #CXX        = g++
 CXX        = clang++
 # コンパイラオプション
-#CXXFLAGS   = -std=c++1z -static -g -O0
-CXXFLAGS   = -std=c++1z -static -g -O3 -mtune=native -march=native
+#CXXFLAGS   = -std=c++17 -static -g -O0
+CXXFLAGS   = -std=c++17 -static -g -O3 -mtune=native -march=native
 # インクルードディレクトリ
 INCLUDE    = -I./inc
 # 出力ファイル名
-TARGETS    = run.momiage
+TARGETS    = a.out
 # 出力ディレクトリ
 TARGETDIR  = .
 # ソースのルートディレクトリ
