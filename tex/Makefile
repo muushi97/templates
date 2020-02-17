@@ -11,7 +11,7 @@
 # compiler
 LATEX      = latexmk
 # output
-TARGETS    = master.pdf
+TARGETS    = $(shell basename $(shell pwd)).pdf
 # output directory
 TARGETDIR  = .
 # source directory
@@ -33,6 +33,7 @@ all: clean $(TARGETS)
 # clean build
 clean:
 	$(LATEX) -C master.tex
+	- rm $(TARGETS)
 
 # build and run
 view: $(SOURCES)
