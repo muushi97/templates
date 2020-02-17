@@ -36,8 +36,7 @@ clean:
 	- rm $(TARGETS)
 
 # build and run
-view: $(SOURCES)
-	$(LATEX) master.tex
+view: $(TARGETS)
 	- evince $(TARGETS)
 
 # not files
