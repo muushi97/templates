@@ -37,7 +37,7 @@ clean:
 
 # build and run
 view: $(SOURCES)
-	$(LATEX) -pv master.tex
+	$(LATEX) master.tex
 	- evince $(TARGETS)
 
 # not files
